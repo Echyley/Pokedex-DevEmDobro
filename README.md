@@ -1,5 +1,7 @@
 # Pokedex
 
-Just a normal try to do a pokedex  👀 
+![Profile](https://user-images.githubusercontent.com/95727612/210887394-1f6c330b-d591-411f-83b8-9fae0ea8a3b7.png)
 
-Almost all is done. Just need some JS, and i'll correct the repository...
+DevWeek Project
+
+Inspiration: https://github.com/devemdobro/projeto-pokedex-mapadev-week-inicial

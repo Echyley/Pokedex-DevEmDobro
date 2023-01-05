@@ -1,49 +1,46 @@
 /*
-Quando clicar no pokémon da listagem temos que esconder o cartão do pokémon aberto e mostrar o cartão correspondente ao que foi selecionado na listagem.
+quando clicar no pokémon da listagem temos que esconder o cartão do pokémon aberto e mostrar o cartão correspondente ao que foi selecionado na listagem
 
-Pra isso vamos precisar trabalhar com dois elementos:
-- Listagem
-- Cartão pokémon.
+pra isso vamos precisar trabalhar com dois elementos
+1 - listagem
+2 - cartão do pokémon
 
-Precisamos criar duas variáveis no JS para trabalhar com os elementos da tela.
+precisamos criar duas variáveis no JS pra trabalhar com os elementos da tela
 
-Vamos precisar trabalhar om um evento de clique feito pelo usário na listagem de pokémons.
+vamos precisar trabalhar com um evento de clique feito pelo usuário na listagem de pokémons
 
-- Remover a classe "aberto" só do cartão em aberto.
-
-- Ao clicar em um pokémon da listagem pegamos o "id" desse pokémon para saber o cartão mostrado.
-
-- Remover a classe "ativo" que marca o pokémon selecionado.
-
-- Adicionar a classe "ativo" no item da lista selecionado.
-
+- remover a classe aberto só do cartão que está aberto
+- ao clicar em um pokémon da listagem pegamos o id desse pokémon pra saber qual cartão mostrar
+-remover a classe ativo que marca o pokémon selecionado
+-adicionar a classe ativo no item da lista selecionado 
 */
 
-const listaSelecaoPokemons = document.querySelectorAll('.pokemon')
-const pokemonsCard = document.querySelectorAll('.cartao-pokemon')
 
+// precisamos criar duas variáveis no JS pra trabalhar com os elementos da tela
+const listaSelecaoPokemons = document.querySelectorAll('.pokemon')
 
 listaSelecaoPokemons.forEach(pokemon => {
-    //Vamos precisar trabalhar om um evento de clique feito pelo usário na listagem de pokémons.
+    //vamos precisar trabalhar com um evento de clique feito pelo usuário na listagem de pokémons
+
     pokemon.addEventListener('click', () => {
-        //-Remover a classe "aberto"só do cartão em aberto.
-        const cartaoPokemonAberto = document.querySelector('.aberto')
-        cartaoPokemonAberto.class.remove ('aberto')
+        //remover a classe aberto só do cartão que está aberto
+        const cartaoPokemonAberto = document.querySelector('.aberto')        
+        cartaoPokemonAberto.classList.remove('aberto')
 
-        //Ao clicar em um pokémon da listagem pegamos o "id" desse pokémon para saber o cartão mostrado.
-
+        //ao clicar em um pokémon da listagem pegamos o id desse pokémon pra saber qual cartão mostrar
         const idPokemonSelecionado = pokemon.attributes.id.value
 
         const idDoCartaoPokemonParaAbrir = 'cartao-' + idPokemonSelecionado
         const cartaoPokemonParaAbrir = document.getElementById(idDoCartaoPokemonParaAbrir)
-        cartaoPokemonParaAbrir.class.add('aberto')
+        cartaoPokemonParaAbrir.classList.add('aberto')
 
-        //Remover a classe "ativo" que marca o pokémon selecionado.
+        //remover a classe ativo que marca o pokémon selecionado
         const pokemonAtivoNaListagem = document.querySelector('.ativo')
         pokemonAtivoNaListagem.classList.remove('ativo')
 
-        //Adicionar a classe "ativo" no item da lista selecionado.
-        const pokemonSelecionadoNaListagem = doument.getElementById(idPokemonSelecionado)
+        //adicionar a classe ativo no item da lista selecionado 
+        const pokemonSelecionadoNaListagem = document.getElementById(idPokemonSelecionado)
         pokemonSelecionadoNaListagem.classList.add('ativo')
+
     })
 })
